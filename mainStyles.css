@@ -1,0 +1,292 @@
+/*  Styles for the main page*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background-color: #f7f8fc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    transition: background-color 0.3s;
+}
+
+#navbar {
+    background-color: #4CAF50;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#navbar h2 {
+    color: white;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#navbar #username-display {
+    color: white;
+    font-size: 1em;
+    margin-right: 20px;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    width: 220px;
+    background-color: #333;
+    color: white;
+}
+
+.sidebar-btn {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.sidebar-btn:hover {
+    background-color: #555;
+}
+
+#main-content {
+    margin-left: 240px;
+    padding: 80px 40px;
+    flex: 1;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: padding 0.3s ease;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+select,
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #66bb6a;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+textarea {
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    resize: vertical;
+    width: 100%;
+    max-width: 300px;
+    height: 100px;
+    font-size: 1em;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+#search-input {
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
+    transition: border-color 0.3s ease;
+    display: block;
+}
+
+#search-input:focus {
+    border-color: #66bb6a;
+}
+
+textarea:focus {
+    border-color: #66bb6a;
+    outline: none;
+}
+
+li {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #main-content {
+        margin-left: 0;
+        padding: 60px 20px;
+    }
+
+    select,
+    input[type="text"] {
+        width: 90%;
+    }
+
+    button {
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    input[type="text"] {
+        width: 80%;
+    }
+
+    button {
+        width: 80%;
+    }
+
+    ul {
+        max-width: 90%;
+    }
+}
+
+.todo-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.todo-item:hover {
+    transform: scale(1.02);
+}
+
+.todo-item h3 {
+    color: #4CAF50;
+    margin-bottom: 5px;
+}
+
+.todo-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.buttons-container button {
+    background-color: #4CAF50;
+    margin-left: 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.buttons-container button:hover {
+    background-color: #45a049;
+}
+dialog {
+    width: 80%;
+    max-width: 400px;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Position the dialog relative to the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the dialog */
+    background-color: white;
+}
+
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #f44336;
+    color: white;
+}
